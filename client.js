@@ -17,9 +17,9 @@ const connect = function () {
     conn.write('Name: DIA')
   });
 
-  // conn.on("data", (data) => {
-  //   console.log('Server says...', data);
-  // });
+  conn.on("data", (data) => {
+    console.log(data);
+  });
 
   // setInterval(() => {
   //   conn.write("Move: up");

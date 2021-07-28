@@ -1,7 +1,6 @@
 const net = require("net");
 
 
-
 // establishes a connection with the game server
 const connect = function () {
 
@@ -14,14 +13,31 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   conn.on("connect", (data) => {
-    console.log('Connected!');
-    conn.write('Name: Dianne')
+    console.log('Successfully connected to game server!');
+    conn.write('Name: DIA')
   });
 
   conn.on("data", (data) => {
     console.log('Server says...', data);
   });
+
+  // setInterval(() => {
+  //   conn.write("Move: up");
+  // }, 700) 
+  // setTimeout(() => {
+  //   conn.write("Move: left");
+  // }, 2500) 
+  // setInterval(() => {
+  //   conn.write("Move: right");
+  // }, 1500) 
+  // setInterval(() => {
+  //   conn.write("Move: down");
+  // }, 2000) 
+
   return conn;
+
 };
+
+
 
 module.exports = connect;
